@@ -190,7 +190,7 @@
             </div>
             <!-- /login -->
 
-            <div>
+            <div id="my-sites">
             <h4>My sites</h4>
             <div id="populate-sites"></div>
              <script id="site-index" type="text-x-handlebars-template">
@@ -208,16 +208,22 @@
             </div>
             <!-- /my-sites -->
 
-            <div>
-
+            <div id="new-site">
+            <form>
+              <div>
+                <input name="site-name" type='text' placeholder='Site name'>
+              </div>
+            </form>
             </div>
             <!-- /create-sites -->
         </div>
     </div>
 </div>
 	<!-- script references -->
-    <script src="js/navigation.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
     <script src="js/handlebars-template.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	</body>

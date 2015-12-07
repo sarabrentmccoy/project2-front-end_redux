@@ -1,8 +1,9 @@
 $(document).ready(function(){
 
   // Registration Handler/Callback
-  $('#register').on('submit', User.registrationHandler);
+  // $('#register').on('submit', User.registrationHandler);
 
-
+  $('#sites').hide();
+  $('#login-reg').hide();
 });
 
