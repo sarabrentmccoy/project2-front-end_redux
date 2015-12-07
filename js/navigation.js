@@ -8,4 +8,10 @@ $('#sites-show').click(function(){
 	$('#sites').show();
 	$('#main').hide();
 	$('login-reg').hide();
-})
+});
+
+$('#home-show').click(function(){
+	$('#sites').hide();
+	$('#main').show();
+	$('login-reg').hide();
+});

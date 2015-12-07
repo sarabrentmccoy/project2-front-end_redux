@@ -20,10 +20,11 @@
             <div class="column col-sm-3" id="sidebar">
                 <a class="logo" href="#">Hi</a>
                 <ul class="nav">
+                    <li id="home-show">Home</li>
                     <li id="login-reg-show">Login or register</li>
                     <li id="sites-show">My sites</li>                    
                     <li id="create-show">Create a site</li>                  
-                    <li>Logout</li>
+                    
                 </ul>
             </div>
             <!-- /sidebar -->
@@ -106,14 +107,14 @@
                         
                         <div class="row">    
                           <div class="col-sm-10">
-                            <h3>By busy-ness</h3>
+                            <h3>By level of activity</h3>
                             <h4>An explanation about what this means</h4>
                             <h4>
                             <small class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
-                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Rarely</a></span></h4>
-                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Occassionally</a></span></h4>
-                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Usually busy</a></span></h4>
+                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Rarely busy</a></span></h4>
+                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Somewhat busy</a></span></h4>
+                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Lots of people, lots of activity</a></span></h4>
                           </div>
                           <div class="col-sm-2">
                             <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/women/17.jpg" class="img-circle"></a>
@@ -191,7 +192,19 @@
 
             <div>
             <h4>My sites</h4>
-            <!-- handlebars script to populate with sites -->
+            <div id="populate-sites"></div>
+             <script id="site-index" type="text-x-handlebars-template">
+                {{#each site}}
+                <div id="each-site">
+                  <h2>${{name}}</h2>
+                  <h3>${{neighborhood}}</h3>
+                  <p>${{description}}</p>
+                  <p>Scale: ${{scale}}</p>
+                  <p>Level of coverage from the elements: ${{coverage}}</p>
+                  <p>Level of activity: ${{busy}}</p>
+                </div>
+                {{/each}}
+             </script>
             </div>
             <!-- /my-sites -->
 
@@ -203,9 +216,9 @@
     </div>
 </div>
 	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/handlebars-template.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
