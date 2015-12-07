@@ -45,7 +45,8 @@ a {
     position: absolute;
     right: 0;
     top: 0;
-    background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/a5/3952794823_CityHallPlaza_Boston_1973.jpg');
+    background-image:url('');
+    background-color: tan;
     background-size:cover;
     background-attachment:fixed;
 }
@@ -106,6 +107,8 @@ a {
 }
 
 #login-reg-show:hover{cursor: pointer;}
+#sites-show:hover{cursor: pointer;}
+#create-show:hover{cursor: pointer;}
 
 
 
