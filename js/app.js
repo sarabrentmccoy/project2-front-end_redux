@@ -6,5 +6,6 @@ $(document).ready(function(){
   $('#my-sites').hide();
   $('#login-reg').hide();
   $('#create-sites').hide();
+  $('#all-sites').hide();
 });
 
