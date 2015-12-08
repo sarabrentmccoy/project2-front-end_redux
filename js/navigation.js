@@ -24,4 +24,6 @@ $('#create-sites-show').click(function(){
 	$('#main').hide();
 	$('#login-reg').hide();
 	$('#create-sites').show();
+	$('#all-sites').hide();
 });
+
