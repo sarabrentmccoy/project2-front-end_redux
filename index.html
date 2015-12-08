@@ -66,7 +66,7 @@
                             <h3>By neighborhood</h3>
                             <h4>An explanation about what this means</h4>
                             <h4>
-                            <small id="all-sites" class="text-muted"><a href="#" class="text-muted">See all</a></small>
+                            <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Porter Sq - Cambridge</a></span></h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Central Hill - Somerville</a></span></h4>
@@ -88,7 +88,7 @@
                             <h3>By coverage</h3>
                             <h4>An explanation about what this means</h4>
                             <h4>
-                            <small id="all-sites" class="text-muted"><a href="#" class="text-muted">See all</a></small>
+                            <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Minimal</a></span></h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Some</a></span></h4>
@@ -110,7 +110,7 @@
                             <h3>By level of activity</h3>
                             <h4>An explanation about what this means</h4>
                             <h4>
-                            <small id="all-sites" class="text-muted"><a href="#" class="text-muted">See all</a></small>
+                            <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Rarely busy</a></span></h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Somewhat busy</a></span></h4>
@@ -120,31 +120,6 @@
                             <a href="#" class="pull-right"><img src="#" class="img-circle"></a>
                           </div>
                         </div>
-                        
-                        <!-- <div class="row divider">    
-                           <div class="col-sm-12"><hr></div>
-                        </div> -->                                            
-                        <!-- 
-                        <div class="col-sm-12">
-                          <div class="page-header text-muted divider">
-                            Up Next
-                          </div>
-                        </div> -->
-                      
-                   <!--      <div class="row">    
-                          <div class="col-sm-4 text-center">
-                            <h4>Related 1</h4>
-                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
-                          </div>
-                          <div class="col-sm-4 text-center">
-                            <h4>Related 2</h4>
-                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
-                          </div>
-                          <div class="col-sm-4 text-center">
-                            <h4>Related 3</h4>
-                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
-                          </div>
-                        </div> -->
        
                         <hr>
                       
@@ -185,17 +160,17 @@
                 <div class="form-group">
                   <input name="password_confirm" type="password" placeholder="Password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success">Register</button>
+                <button id="register" type="submit" class="btn btn-success">Register</button>
               </form>
             </div>
             <!-- /login -->
 
             <div id="my-sites">
-            <h4>My sites</h4>
-            <div id="populate-sites"></div>
+            <h2>My sites</h2>
+            <ul id="populate-sites"></ul>
              <script id="site-index" type="text-x-handlebars-template">
                 {{#each site}}
-                <div id="each-site">
+                <div>
                   <h2>${{name}}</h2>
                   <h3>${{neighborhood}}</h3>
                   <p>${{description}}</p>
@@ -208,8 +183,25 @@
             </div>
             <!-- /my-sites -->
 
+            <div id="all-sites">
+            <h2>All sites</h2>
+            <ul id="populate-sites"></ul>
+             <script id="site-index" type="text-x-handlebars-template">
+                {{#each site}}
+                <div>
+                  <h2>${{name}}</h2>
+                  <h3>${{neighborhood}}</h3>
+                  <p>${{description}}</p>
+                  <p>Scale: ${{scale}}</p>
+                  <p>Level of coverage from the elements: ${{coverage}}</p>
+                  <p>Level of activity: ${{busy}}</p>
+                </div>
+                {{/each}}
+             </script>
+            </div>
+            <!-- all sites -->
+
             <div id="create-sites">
-            <form>
               <div>
                 <h2>New site addition</h2>
                 <div>
@@ -249,8 +241,10 @@
                   <input name="busy" type="radio" value="Lots"> Very busy: Lots of people, lots of activity. Great for people-watching.<br>
                   </form>
                 </div>
+                
               </div>
-            </form>
+              <button id="new-site" type="submit" class="btn btn-success">Add site</button>
+
             </div>
             <!-- /create-sites -->
         </div>
@@ -260,6 +254,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/handlebars-v4.0.5.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/proj2_api.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/handlebars-template.js"></script>
 		<script src="js/bootstrap.min.js"></script>
