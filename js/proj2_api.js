@@ -133,7 +133,10 @@ $(function() {
     var credentials = wrap('credentials', form2object(this));
     proj_twoapi.register(credentials, callback);
     e.preventDefault();
-    console.log("REGISTERED!");
+    $('#login-reg').show();
+    $('#main').hide();
+    $('#my-sites').hide();
+    $('#create-sites').hide();
   });
 
 
@@ -153,7 +156,7 @@ $(function() {
     });
   });
 
-  $('#new-site').on('submit', function(e) {
+  $('#new-site').on('click', function(e) {
     e.preventDefault();
     
     var new_site = wrap('site', form2object(this));
