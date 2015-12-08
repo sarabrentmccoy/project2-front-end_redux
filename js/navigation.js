@@ -1,17 +1,27 @@
 $('#login-reg-show').click(function(){
 	$('#login-reg').show();
 	$('#main').hide();
-	$('#sites').hide();
+	$('#my-sites').hide();
+	$('#create-sites').hide();
 });
 
-$('#sites-show').click(function(){
-	$('#sites').show();
+$('#my-sites-show').click(function(){
+	$('#my-sites').show();
 	$('#main').hide();
-	$('login-reg').hide();
+	$('#login-reg').hide();
+	$('#create-sites').hide();
 });
 
 $('#home-show').click(function(){
-	$('#sites').hide();
+	$('#my-sites').hide();
 	$('#main').show();
-	$('login-reg').hide();
+	$('#login-reg').hide();
+	$('#create-sites').hide();
+});
+
+$('#create-sites-show').click(function(){
+	$('#my-sites').hide();
+	$('#main').hide();
+	$('#login-reg').hide();
+	$('#create-sites').show();
 });
