@@ -153,7 +153,6 @@ $(function() {
     });
   });
 
-
   $('#new-site').on('submit', function(e) {
     e.preventDefault();
     
