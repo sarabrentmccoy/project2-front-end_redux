@@ -1,6 +1,6 @@
 var siteIndexTemplate = Handlebars.compile($('#site-index').html());
 
-$('#all').click(function(e){
+$('#all-sites').click(function(e){
   $.ajax({
     method: "GET",
     url: "https://localhost:3000",
