@@ -88,9 +88,9 @@ var proj_twoapi = {
   deleteSite: function (token, site, callback) {
     this.ajax({
       method: 'DELETE',
-      url: this.url + '/', 
+      url: this.url + '/delete', 
       headers: {
-        AuthorizatioN: 'Token token=' + token
+        Authorization: 'Token token=' + token
       },
       contentType: 'application/json, charset=utf-8',
       data: JSON.stringify(deleted_site)
@@ -130,7 +130,7 @@ $(function() {
   };
 
   $('#register').on('submit', function(e) {
-    var credentials = wrap('credentials', form2object(this));
+    var credentials = wrap('credentials', form2object(e.target));
     proj_twoapi.register(credentials, callback);
     e.preventDefault();
     $('#login-reg').show();
@@ -143,7 +143,7 @@ $(function() {
   $('#login').on('submit', function(e) {
     e.preventDefault();
 
-    var credentials = wrap('credentials', form2object(this))
+    var credentials = wrap('credentials', form2object(e.target))
     proj_twoapi.login(credentials, function(err, data){
 
       if (err) {
@@ -179,13 +179,16 @@ $(function() {
   $('#delete-site').on('submit', function(e) {
     e.preventDefault();
    
-    var deleted_site = wrap('site', form2object(this));
-    proj_twoapi.deleteSite();
+    var deleted_site = wrap('site', form2object(e.target));
+    proj_twoapi.deleteSite(token, site, function(err, data) {
       if(err) {
         console.log(err)
       } else{
         console.log(data);
       }
+    });
+
+    return false;
   });
   
 

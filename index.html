@@ -45,8 +45,8 @@
                         <!--/top story-->
                         <div class="row">    
                           <div class="col-sm-10">
-                            <h3>About about</h3>
-                            <h4>About about about about</h4>
+                            <h2>For more amorphous city needs</h2>
+                            <h4>Here's a crowd-sourced listing of public spaces in Boston and, places in which to sit or read or call your mom for free. Some are <a style="font-weight: bold;" href="http://www.cityofboston.gov/assessing/">publicly owned</a>, some are <a style="font-weight: bold;" href="https://www.architects.org/architectureboston/articles/boston-pops">privately owned</a>, and some are just dormant staircases good for a cry.</h4>
                           </div>
                           <div class="col-sm-2">
                             <a href="#" class="pull-right"><img src="" class="img-circle"></a>
@@ -55,7 +55,7 @@
                         
                         <div class="col-sm-12" id="stories">  
                           <div class="page-header text-muted divider">
-                            Ways to search
+                            Ways to view
                           </div>
                         </div>
                         
@@ -64,14 +64,13 @@
                         <div class="row">    
                           <div class="col-sm-10">
                             <h3>By neighborhood</h3>
-                            <h4>An explanation about what this means</h4>
+                            <h4>See all recommended places in a specific neighborhood.</h4>
                             <h4>
                             <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Porter Sq - Cambridge</a></span></h4>
                             <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Central Hill - Somerville</a></span></h4>
-                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">forthcoming</a></span></h4>
-                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">forthcoming</a></span></h4>
+                            <h4><span class="label label-default"><a href="#porter-sq" style="color: white;">Financial District - Boston</a></span></h4>
                             
                           </div>
                           <div class="col-sm-2">
@@ -86,7 +85,7 @@
                         <div class="row">    
                           <div class="col-sm-10">
                             <h3>By coverage</h3>
-                            <h4>An explanation about what this means</h4>
+                            <h4>See all recommended places with a particular level of coverage from the elements.</h4>
                             <h4>
                             <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
@@ -108,7 +107,7 @@
                         <div class="row">    
                           <div class="col-sm-10">
                             <h3>By level of activity</h3>
-                            <h4>An explanation about what this means</h4>
+                            <h4>See all recommended places with a particular level of activity, foot traffic, and noise.</h4>
                             <h4>
                             <small id="all-sites-show" class="text-muted"><a href="#" class="text-muted">See all</a></small>
                             </h4>
@@ -138,7 +137,7 @@
             <div id="login-reg">
               <form id="login" class="navbar-form navbar-right">
               Been here before?
-                <div class="form-group">
+                <div style="margin-left: 10px;" class="form-group">
                   <input name="email" type="text" placeholder="Email" class="form-control">
                 </div>
                 <div class="form-group">
@@ -148,17 +147,17 @@
               </form>
               <form id="register" class="navbar-form navbar-right">
               New?
-                <div class="form-group">
-                  <input name="email" type="text" placeholder="Email" class="form-control">
+                <div style="margin-left: 10px;" class="form-group">
+                  <input name="email" type="text" placeholder="Email" class="hello form-control">
                 </div>
                 <div class="form-group">
-                  <input name="name" type="text" placeholder="Name" class="form-control">
+                  <input name="name" type="text" placeholder="Name" class="hello form-control">
                 </div>
                 <div class="form-group">
-                  <input name="password" type="password" placeholder="Password" class="form-control">
+                  <input name="password" type="password" placeholder="Password" class="hello form-control">
                 </div>
                 <div class="form-group">
-                  <input name="password_confirm" type="password" placeholder="Password" class="form-control">
+                  <input name="password_confirm" type="password" placeholder="Password" class="hello form-control">
                 </div>
                 <button id="register" type="submit" class="btn btn-success">Register</button>
               </form>
@@ -167,19 +166,7 @@
 
             <div id="my-sites">
             <h2>My sites</h2>
-            <ul id="populate-sites"></ul>
-             <script id="site-index" type="text-x-handlebars-template">
-                {{#each site}}
-                <div>
-                  <h2>${{name}}</h2>
-                  <h3>${{neighborhood}}</h3>
-                  <p>${{description}}</p>
-                  <p>Scale: ${{scale}}</p>
-                  <p>Level of coverage from the elements: ${{coverage}}</p>
-                  <p>Level of activity: ${{busy}}</p>
-                </div>
-                {{/each}}
-             </script>
+            <div id="populate-sites"></div>
             </div>
             <!-- /my-sites -->
 
@@ -187,14 +174,14 @@
             <h2>All sites</h2>
             <ul id="populate-sites"></ul>
              <script id="site-index" type="text-x-handlebars-template">
-                {{#each site}}
+                {{#each sites}}
                 <div>
-                  <h2>${{name}}</h2>
-                  <h3>${{neighborhood}}</h3>
-                  <p>${{description}}</p>
-                  <p>Scale: ${{scale}}</p>
-                  <p>Level of coverage from the elements: ${{coverage}}</p>
-                  <p>Level of activity: ${{busy}}</p>
+                  <h2>{{name}}</h2>
+                  <h3>{{neighborhood}}</h3>
+                  <p>{{description}}</p>
+                  <p>Scale: {{scale}}</p>
+                  <p>Level of coverage from the elements: {{coverage}}</p>
+                  <p>Level of activity: {{busy}}</p>
                 </div>
                 {{/each}}
              </script>
@@ -206,45 +193,45 @@
               <div>
                 <h2>New site addition</h2>
                 <div>
-                  Give it a name:
-                  <input name="name" type='text' placeholder='Site name'>
+                  <p style="font-weight: bold; margin-top: 10px;">Give it a name:</p>
+                  <input name="name" type='text' placeholder=' Site name' style="margin-bottom: 10px;">
                 </div>
                 <div>
-                  Description:
-                  <input class="description-field" name="description" type='text' placeholder="What's this place like? What's it good for?">
+                  <p style="font-weight: bold; margin-top: 10px;">Description:</p>
+                  <input class="description-field" name="description" type='text' style="margin-bottom: 10px;" placeholder=" What's this place like? What's it good for?">
                 </div>
                 <div>
-                  Neighborhood:<br>
+                  <p style="font-weight: bold; margin-top: 10px;">Neighborhood:</p>
                   <input name="neighborhood" type="radio" value="Western Cambridge"> The western third of Cambridge<br>
                   <input name="neighborhood" type="radio" value="Central Somerville"> Central Somerville<br> 
                   <input name="neighborhood" type="radio" value="Financial District"> Financial District<br>
                 </div>
                 <div>
-                  Address (approx.):
-                  <input class="address-field" name="address" type='text' placeholder="Closest street number, name, City, State, zip">
+                  <p style="font-weight: bold; margin-top: 10px;">Address (approx.):</p>
+                  <input class="address-field" name="address" type='text' placeholder=" Closest street number, name, City, State, zip">
                 </div>
                 <div>
-                  Scale:<br>
+                  <p style="font-weight: bold; margin-top: 10px;">Scale:</p>
                   <input name="scale" type="radio" value="Small"> Small, like a single bench.<br>
                   <input name="scale" type="radio" value="Medium"> Medium, like a staircase.<br> 
                   <input name="scale" type="radio" value="Large"> Large, like a whole plaza.<br>
                 </div>
                 <div>
-                  Level of coverage:
+                  <p style="font-weight: bold; margin-top: 10px;">Level of coverage:</p>
                   <input name="coverage" type="radio" value="Minimal"> Conducive to sunbathing.<br>
                   <input name="coverage" type="radio" value="Somewhat"> Somewhat covered.<br> 
                   <input name="coverage" type="radio" value="Covered"> Fully covered but still outdoors.<br>
                   <input name="coverage" type="radio" value="Indoors"> Indoors.<br>
                 </div>        
                 <div>
-                  Level of activity:
+                  <p style="font-weight: bold; margin-top: 10px;">Level of activity:</p>
                   <input name="busy" type="radio" value="Little"> Quieter. Good for reading, a cry.<br>
                   <input name="busy" type="radio" value="Some"> Not too busy, at least not usually.<br> 
                   <input name="busy" type="radio" value="Lots"> Very busy: Lots of people, lots of activity. Great for people-watching.<br>
                 </div>
                
               </div>
-              <button id="new-site" type="submit" class="btn btn-success">Add site</button>
+              <button style="margin-top: 10px;" id="new-site" type="submit" class="btn btn-success">Add site</button>
             </form> 
             </div>
             <!-- /create-sites -->
