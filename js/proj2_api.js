@@ -151,6 +151,9 @@ $(function() {
       } else {
       token = data.user.token;
       id = data.user.id;
+      $('#create-sites-show').show();
+      $('#delete-sites-show').show();
+      $('#my-sites-show').show();
       console.log("You're logged in!");
       }
     });
@@ -173,18 +176,18 @@ $(function() {
   });
 
 
-  // $('#delete-site').on('submit', function(e) {
-  //   e.preventDefault();
+  $('#delete-site').on('submit', function(e) {
+    e.preventDefault();
    
-  //   var deleted_site = wrap('site', form2object(this));
-  //   proj_twoapi.deleteSite()
-  //     if(err) {
-  //       console.log(err)
-  //     } else{
-  //       console.log(data);
-  //     }
-  //   });
-  // });
+    var deleted_site = wrap('site', form2object(this));
+    proj_twoapi.deleteSite();
+      if(err) {
+        console.log(err)
+      } else{
+        console.log(data);
+      }
+  });
+  
 
 
- });
+});
