@@ -110,6 +110,7 @@ a {
 #my-sites-show:hover{cursor: pointer;}
 #create-sites-show:hover{cursor: pointer;}
 #home-show:hover{cursor: pointer;}
+#delete-sites-show:hover{cursor: pointer;}
 
 
 /* bootstrap overrides */
