@@ -156,10 +156,11 @@ $(function() {
     });
   });
 
-  $('#new-site').on('click', function(e) {
+  $('#create-sites form').on('submit', function(e) {
     e.preventDefault();
     
-    var new_site = wrap('site', form2object(this));
+    var new_site = wrap('site', form2object(e.target));
+    console.log(new_site);
     proj_twoapi.createSite(token, new_site, function(err, data) {
       if(err) {
         console.log(err)
@@ -167,6 +168,8 @@ $(function() {
         console.log(data);
       }
     });
+
+    return false;
   });
 
 
