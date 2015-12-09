@@ -7,6 +7,8 @@ $(document).ready(function(){
   $('#login-reg').hide();
   $('#create-sites').hide();
   $('#all-sites').hide();
+  $('#delete-sites').hide();
+
   $('#create-sites-show').hide();
   $('#delete-sites-show').hide();
   $('#my-sites-show').hide();
