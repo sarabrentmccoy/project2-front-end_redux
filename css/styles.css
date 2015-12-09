@@ -107,9 +107,9 @@ a {
 }
 
 #login-reg-show:hover{cursor: pointer;}
-#sites-show:hover{cursor: pointer;}
-#create-show:hover{cursor: pointer;}
-
+#my-sites-show:hover{cursor: pointer;}
+#create-sites-show:hover{cursor: pointer;}
+#home-show:hover{cursor: pointer;}
 
 
 /* bootstrap overrides */
