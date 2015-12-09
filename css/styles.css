@@ -46,7 +46,7 @@ a {
     right: 0;
     top: 0;
     background-image:url('');
-    background-color: tan;
+    background-color: grey;
     background-size:cover;
     background-attachment:fixed;
 }
@@ -124,7 +124,7 @@ h1,h2,h3 {
   background-color:transparent;
 }
 .label-default {
-  background-color:#dddddd;
+  background-color:#828BA8;
 }
 .page-header {
   margin-top: 55px;
@@ -149,4 +149,8 @@ small.text-muted {
 
 .address-field {
   width: 500px;
+}
+
+.hello {
+  clear: right;
 }
