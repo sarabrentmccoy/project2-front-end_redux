@@ -202,6 +202,7 @@
             <!-- all sites -->
 
             <div id="create-sites">
+            <form>
               <div>
                 <h2>New site addition</h2>
                 <div>
@@ -213,38 +214,38 @@
                   <input class="description-field" name="description" type='text' placeholder="What's this place like? What's it good for?">
                 </div>
                 <div>
+                  Neighborhood:<br>
+                  <input name="neighborhood" type="radio" value="Western Cambridge"> The western third of Cambridge<br>
+                  <input name="neighborhood" type="radio" value="Central Somerville"> Central Somerville<br> 
+                  <input name="neighborhood" type="radio" value="Financial District"> Financial District<br>
+                </div>
+                <div>
                   Address (approx.):
                   <input class="address-field" name="address" type='text' placeholder="Closest street number, name, City, State, zip">
                 </div>
                 <div>
                   Scale:<br>
-                  <form name="scale-form">
                   <input name="scale" type="radio" value="Small"> Small, like a single bench.<br>
                   <input name="scale" type="radio" value="Medium"> Medium, like a staircase.<br> 
                   <input name="scale" type="radio" value="Large"> Large, like a whole plaza.<br>
-                  </form>
                 </div>
                 <div>
                   Level of coverage:
-                  <form name="coverage-form">
                   <input name="coverage" type="radio" value="Minimal"> Conducive to sunbathing.<br>
                   <input name="coverage" type="radio" value="Somewhat"> Somewhat covered.<br> 
                   <input name="coverage" type="radio" value="Covered"> Fully covered but still outdoors.<br>
                   <input name="coverage" type="radio" value="Indoors"> Indoors.<br>
-                  </form>
                 </div>        
                 <div>
                   Level of activity:
-                  <form name="busy-form">
                   <input name="busy" type="radio" value="Little"> Quieter. Good for reading, a cry.<br>
                   <input name="busy" type="radio" value="Some"> Not too busy, at least not usually.<br> 
                   <input name="busy" type="radio" value="Lots"> Very busy: Lots of people, lots of activity. Great for people-watching.<br>
-                  </form>
                 </div>
-                
+               
               </div>
               <button id="new-site" type="submit" class="btn btn-success">Add site</button>
-
+            </form> 
             </div>
             <!-- /create-sites -->
         </div>
