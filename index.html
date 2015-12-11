@@ -23,7 +23,8 @@
                     <li id="home-show">Home</li>
                     <li id="login-reg-show">Login or register</li>
                     <li id="my-sites-show">My sites</li>                    
-                    <li id="create-sites-show">Create a site</li>                  
+                    <li id="create-sites-show">Create a site</li>
+                    <li id="update-sites-show">Update a site's description</li>                 
                     <li id="delete-sites-show">Delete a site</li> 
                 </ul>
             </div>
@@ -176,7 +177,7 @@
              <script id="site-index" type="text-x-handlebars-template">
                 {{#each sites}}
                 <div>
-                  <h2><a #update-sites>{{name}}</a></h2>
+                  <h2>{{name}}</h2>
                   <h3>{{neighborhood}}</h3>
                   <p>{{description}}</p>
                   <p>Scale: {{scale}}</p>
@@ -193,6 +194,10 @@
               <div>
                 <h2>Update a site description</h2>
                 <div>
+                  <p style="font-weight: bold; margin-top: 10px;">Site ID:</p>
+                  <input class="id-field" name="id" type='text' style="margin-bottom: 10px;" placeholder="ID">
+                </div>
+                <div>
                   <p style="font-weight: bold; margin-top: 10px;">Description:</p>
                   <input class="description-field" name="description" type='text' style="margin-bottom: 10px;" placeholder=" What's this place like? What's it good for?">
                 </div>
@@ -200,6 +205,7 @@
               <button style="margin-top: 10px;" id="new-site" type="submit" class="btn btn-success">Update site</button>
             </form> 
             </div>
+           <!--  update sites -->
 
 
             <div id="create-sites">

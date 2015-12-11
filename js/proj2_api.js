@@ -72,10 +72,10 @@ var proj_twoapi = {
     }, callback);
   },
 
-  updateSite: function (token, site, callback) {
+  updateSite: function (token, id, updated_site, callback) {
     this.ajax({
       method: 'PATCH',
-      url: this.url + '/sites/' + name,
+      url: this.url + '/sites/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
@@ -94,7 +94,6 @@ var proj_twoapi = {
       }
     })
   }
-
 };
 
 var token;
@@ -151,6 +150,7 @@ $(function() {
       id = data.user.id;
       $('#create-sites-show').show();
       $('#delete-sites-show').show();
+      $('#update-sites-show').show();
       $('#my-sites-show').show();
       console.log("You're logged in!");
       }
@@ -173,21 +173,23 @@ $(function() {
     return false;
   });
 
-  // $('#update-sites form').on('submit', function(e) {
-  //   e.preventDefault();
+  $('#update-sites form').on('submit', function(e) {
+    e.preventDefault();
     
-  //   var updated_site = wrap('site', form2object(e.target));
-  //   console.log(updated_site);
-  //   proj_twoapi.updateSite(token, new_site, function(err, data) {
-  //     if(err) {
-  //       console.log(err)
-  //     } else{
-  //       console.log(data);
-  //     }
-  //   });
+    var id = $('#update-sites input').val();
+    // var updateid = $('#update-sites>input[name="update-id"]').val();
+    var updated_site = wrap('site', form2object(e.target));
+    console.log(updated_site);
+    proj_twoapi.updateSite(token, id, updated_site, function(err, data) {
+      if(err) {
+        console.log(err)
+      } else{
+        console.log(data);
+      }
+    });
 
-  //   return false;
-  // });
+    return false;
+  });
 
 
   $('#delete-sites form').on('submit', function(e) {

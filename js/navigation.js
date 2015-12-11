@@ -45,3 +45,13 @@ $('#delete-sites-show').click(function(){
 	$('#update-sites').hide();
 });
 
+$('#update-sites-show').click(function(){
+	$('#my-sites').hide();
+	$('#main').hide();
+	$('#login-reg').hide();
+	$('#delete-sites').hide();
+	$('#create-sites').hide();
+	$('#all-sites').hide();
+	$('#update-sites').show();
+
+})

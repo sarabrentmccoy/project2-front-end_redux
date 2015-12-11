@@ -111,6 +111,7 @@ a {
 #create-sites-show:hover{cursor: pointer;}
 #home-show:hover{cursor: pointer;}
 #delete-sites-show:hover{cursor: pointer;}
+#update-sites-show:hover{cursor: pointer;}
 
 
 /* bootstrap overrides */
