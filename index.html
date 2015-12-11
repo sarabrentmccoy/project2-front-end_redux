@@ -176,7 +176,7 @@
              <script id="site-index" type="text-x-handlebars-template">
                 {{#each sites}}
                 <div>
-                  <h2>{{name}}</h2>
+                  <h2><a #update-sites>{{name}}</a></h2>
                   <h3>{{neighborhood}}</h3>
                   <p>{{description}}</p>
                   <p>Scale: {{scale}}</p>
@@ -187,6 +187,20 @@
              </script>
             </div>
             <!-- all sites -->
+
+            <div id="update-sites">
+            <form>
+              <div>
+                <h2>Update a site description</h2>
+                <div>
+                  <p style="font-weight: bold; margin-top: 10px;">Description:</p>
+                  <input class="description-field" name="description" type='text' style="margin-bottom: 10px;" placeholder=" What's this place like? What's it good for?">
+                </div>
+              </div>
+              <button style="margin-top: 10px;" id="new-site" type="submit" class="btn btn-success">Update site</button>
+            </form> 
+            </div>
+
 
             <div id="create-sites">
             <form>
@@ -239,7 +253,7 @@
             <div id="delete-sites">
               <h2>Delete a site</h2>
               <div>
-              <form>
+              <form id="delete-sites-form">
                 Site ID: 
                 <input name="id" type='text' placeholder='ID'>
                 <button id="delete-site" type="submit" class="btn btn-success">Delete site</button>

@@ -4,6 +4,7 @@ $('#login-reg-show').click(function(){
 	$('#my-sites').hide();
 	$('#create-sites').hide();
 	$('#delete-sites').hide();
+	$('#update-sites').hide();
 });
 
 $('#my-sites-show').click(function(){
@@ -12,6 +13,7 @@ $('#my-sites-show').click(function(){
 	$('#login-reg').hide();
 	$('#create-sites').hide();
 	$('#delete-sites').hide();
+	$('#update-sites').hide();
 });
 
 $('#home-show').click(function(){
@@ -20,6 +22,7 @@ $('#home-show').click(function(){
 	$('#login-reg').hide();
 	$('#create-sites').hide();
 	$('#delete-sites').hide();
+	$('#update-sites').hide();
 });
 
 $('#create-sites-show').click(function(){
@@ -29,6 +32,7 @@ $('#create-sites-show').click(function(){
 	$('#create-sites').show();
 	$('#all-sites').hide();
 	$('#delete-sites').hide();
+	$('#update-sites').hide();
 });
 
 $('#delete-sites-show').click(function(){
@@ -38,5 +42,6 @@ $('#delete-sites-show').click(function(){
 	$('#delete-sites').show();
 	$('#create-sites').hide();
 	$('#all-sites').hide();
+	$('#update-sites').hide();
 });
 

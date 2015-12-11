@@ -75,7 +75,7 @@ var proj_twoapi = {
   updateSite: function (token, site, callback) {
     this.ajax({
       method: 'PATCH',
-      url: this.url + '/',
+      url: this.url + '/sites/' + name,
       headers: {
         Authorization: 'Token token=' + token
       },
@@ -85,15 +85,13 @@ var proj_twoapi = {
     }, callback);
   },
 
-  deleteSite: function (token, site, callback) {
+  deleteSite: function (token, id, callback) {
     this.ajax({
       method: 'DELETE',
-      url: this.url + '/delete', 
+      url: this.url + '/sites/' + id, 
       headers: {
         Authorization: 'Token token=' + token
-      },
-      contentType: 'application/json, charset=utf-8',
-      data: JSON.stringify(deleted_site)
+      }
     })
   }
 
@@ -175,16 +173,32 @@ $(function() {
     return false;
   });
 
+  // $('#update-sites form').on('submit', function(e) {
+  //   e.preventDefault();
+    
+  //   var updated_site = wrap('site', form2object(e.target));
+  //   console.log(updated_site);
+  //   proj_twoapi.updateSite(token, new_site, function(err, data) {
+  //     if(err) {
+  //       console.log(err)
+  //     } else{
+  //       console.log(data);
+  //     }
+  //   });
 
-  $('#delete-site').on('submit', function(e) {
+  //   return false;
+  // });
+
+
+  $('#delete-sites form').on('submit', function(e) {
     e.preventDefault();
    
-    var deleted_site = wrap('site', form2object(e.target));
-    proj_twoapi.deleteSite(token, site, function(err, data) {
+    var id = $(e.target).children("input").val();
+    proj_twoapi.deleteSite(token, id, function(err) {
       if(err) {
         console.log(err)
       } else{
-        console.log(data);
+        console.log("You deleted that!");
       }
     });
 
